@@ -99,12 +99,14 @@ api.interceptors.response.use(
 export default api;
 
 // Export common HTTP methods with proper typing
+// Note: The response interceptor returns response.data directly,
+// so these methods return the unwrapped data type T, not AxiosResponse<T>
 export const apiClient = {
-  get: <T = any>(url: string, config?: any) => api.get<T>(url, config),
-  post: <T = any>(url: string, data?: any, config?: any) => api.post<T>(url, data, config),
-  put: <T = any>(url: string, data?: any, config?: any) => api.put<T>(url, data, config),
-  patch: <T = any>(url: string, data?: any, config?: any) => api.patch<T>(url, data, config),
-  delete: <T = any>(url: string, config?: any) => api.delete<T>(url, config),
+  get: <T = any>(url: string, config?: any): Promise<T> => api.get<T>(url, config) as Promise<T>,
+  post: <T = any>(url: string, data?: any, config?: any): Promise<T> => api.post<T>(url, data, config) as Promise<T>,
+  put: <T = any>(url: string, data?: any, config?: any): Promise<T> => api.put<T>(url, data, config) as Promise<T>,
+  patch: <T = any>(url: string, data?: any, config?: any): Promise<T> => api.patch<T>(url, data, config) as Promise<T>,
+  delete: <T = any>(url: string, config?: any): Promise<T> => api.delete<T>(url, config) as Promise<T>,
 };
 
 // Utility functions for handling API responses

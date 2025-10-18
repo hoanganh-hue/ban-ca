@@ -4,7 +4,7 @@ import type {
   GameSession,
   ApiResponse,
   PaginatedResponse
-} from '@types/index';
+} from '../types';
 
 interface GetUsersParams {
   page?: number;
@@ -166,3 +166,6 @@ export class UserService {
     throw new Error(response.message || 'Failed to get user sessions');
   }
 }
+
+// Export instance for convenience
+export const userService = UserService;

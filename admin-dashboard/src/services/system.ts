@@ -5,7 +5,7 @@ import type {
   SystemHealth,
   ApiResponse,
   PaginatedResponse
-} from '@types/index';
+} from '../types';
 
 interface GetConfigurationsParams {
   category?: string;
@@ -188,3 +188,6 @@ export class SystemService {
     throw new Error(response.message || 'Failed to import configurations');
   }
 }
+
+// Export instance for convenience
+export const systemService = SystemService;

@@ -3,7 +3,7 @@ import type {
   ContentAsset,
   ApiResponse,
   PaginatedResponse
-} from '@types/index';
+} from '../types';
 
 interface GetAssetsParams {
   page?: number;
@@ -210,3 +210,6 @@ export class ContentService {
     throw new Error(response.message || 'Failed to generate thumbnails');
   }
 }
+
+// Export instance for convenience
+export const contentService = ContentService;
