@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "assets": {
+    "water_textures": [
+      {
+        "name": "ocean_ripples",
+        "path": "textures/water/seamless_ocean_water_underwater_texture_blue_ripples.jpg",
+        "size": "750x750",
+        "type": "seamless",
+        "usage": "background_scrolling"
+      },
+      {
+        "name": "deep_water", 
+        "path": "textures/water/seamless_deep_ocean_water_texture_underwater.jpg",
+        "size": "626x417",
+        "type": "seamless",
+        "usage": "deep_environment"
+      }
+    ],
+    "sand_textures": [
+      {
+        "name": "ocean_floor",
+        "path": "textures/sand/seamless_underwater_ocean_floor_sand_texture.jpg", 
+        "size": "750x750",
+        "type": "seamless",
+        "usage": "ground_material"
+      }
+    ],
+    "ui_elements": [
+      {
+        "name": "underwater_ui_kit",
+        "path": "ui/buttons/underwater_ocean_theme_game_ui_buttons_interface_kit.jpg",
+        "size": "626x405", 
+        "components": ["buttons", "panels", "progress_bars", "shop_interface"]
+      }
+    ],
+    "effects": {
+      "particles": [
+        {
+          "name": "bubble_sprite",
+          "path": "effects/particles/underwater_bubbles_particle_effect_sprite.png",
+          "transparency": true,
+          "usage": "particle_system"
+        }
+      ],
+      "explosions": [
+        {
+          "name": "impact_explosion", 
+          "path": "effects/explosions/underwater_explosion_bubbles_impact_effect_turquoise_water.jpg",
+          "usage": "weapon_impact"
+        }
+      ]
+    }
+  }
+}

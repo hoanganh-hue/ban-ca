@@ -1,0 +1,21 @@
+## Development dockerfile for client without root workspaces
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Install deps per-package (no root lockfile)
+COPY shared/package.json shared/package.json
+COPY client/package.json client/package.json
+RUN npm install --prefix shared \
+ && npm install --prefix client
+
+# Copy source
+COPY . .
+
+# Build shared for local linking
+RUN npm --prefix shared run build
+
+EXPOSE 3000
+
+# Use client script explicitly without workspace indirection
+CMD ["npm", "--prefix", "client", "run", "dev"]
