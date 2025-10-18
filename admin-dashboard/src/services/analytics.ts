@@ -5,7 +5,7 @@ import type {
   SystemHealth,
   TimeSeriesData,
   ApiResponse
-} from '@types/index';
+} from '../types';
 
 export class AnalyticsService {
   // Get dashboard statistics
@@ -114,3 +114,6 @@ export class AnalyticsService {
     return response;
   }
 }
+
+// Export instance for convenience
+export const analyticsService = AnalyticsService;

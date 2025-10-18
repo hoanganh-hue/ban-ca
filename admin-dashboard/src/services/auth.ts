@@ -5,7 +5,7 @@ import type {
   AdminUser,
   AdminSession,
   ApiResponse
-} from '@types/index';
+} from '../types';
 
 export class AuthService {
   private static readonly TOKEN_KEY = 'admin_token';

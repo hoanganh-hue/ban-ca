@@ -3,7 +3,7 @@ import type {
   GameSession,
   ApiResponse,
   PaginatedResponse
-} from '@types/index';
+} from '../types';
 
 interface GetSessionsParams {
   page?: number;
@@ -171,3 +171,6 @@ export class GameService {
     throw new Error(response.message || 'Failed to broadcast message');
   }
 }
+
+// Export instance for convenience
+export const gameService = GameService;
